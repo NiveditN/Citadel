@@ -1,3 +1,3 @@
 /* posts.js */
 
-Posts = new Meteor.Collections('posts');
+Posts = new Meteor.Collection('posts');
