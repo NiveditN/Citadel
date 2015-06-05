@@ -1,5 +1,8 @@
 /* fixtures.js */
 
+/* This function returns a default set of posts if 
+the post count in client side MiniMongo is zero */
+
 if(Posts.find().count() === 0) {
 	Posts.insert({
 		title: 'Saren Arterius',
