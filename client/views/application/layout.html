@@ -1,0 +1,14 @@
+<!-- this code now generates (yields) the template for specific route using iron-router -->
+
+<template name="layout">
+	<div class="container">
+		<header class="navbar">
+			<div class="navbar-inner">
+				<a class="brand" href="{{pathFor 'postsList'}}">Citadel</a>
+			</div>
+		</header>
+		<div id="main" class="row-fluid">
+			{{> yield}}
+		</div>
+	</div>
+</template>
