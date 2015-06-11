@@ -10,7 +10,7 @@ Template.postSubmit.events({
 			message: $(e.target).find('[name=message]').val()
 		}
 
-		post._id = POsts.insert(post);
+		post._id = Posts.insert(post);
 		Router.go('postPage', post);
 	}
 });
