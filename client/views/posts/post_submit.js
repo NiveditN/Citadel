@@ -1,5 +1,6 @@
 /* post_submit.js */
 
+/* This function is used to get the form data from submit post */
 Template.postSubmit.events({
 	'submit form': function(e) {
 		e.preventDefault();
