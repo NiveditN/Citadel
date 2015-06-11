@@ -1,0 +1,39 @@
+<!-- post_submit.html -->
+
+<!-- This template is for creating new post item -->
+
+<!-- post submit template begins -->
+<template name="postSubmit">
+	<form class="main form page">
+		<div class="col-sm-3">
+			<!-- URL -->
+			<div class="form-group">
+				<label class="control-label" for="url">URL</label>
+				<div class="controls">
+					<input name="url" type="text" value="" placeholder="Your URL" class="form-control"/>
+				</div>
+			</div>
+			<!-- title -->
+			<div class="form-group">
+				<label class="control-label" for="title">Title</label>
+				<div class="controls">
+					<input name="title" type="text" value="" placeholder="Name your post" class="form-control"/>
+				</div>
+			</div>
+			<!-- message -->
+			<div class="form-group">
+				<label class="control-label" for="message">Message</label>
+				<div class="controls">
+					<textarea name="message" type="text" value="" class="form-control"></textarea>
+				</div>
+			</div>
+			<!-- submit button -->
+			<div class="form-group">
+				<div class="controls">
+					<input type="submit" value="Submit" class="btn btn-primary"/>
+				</div>
+			</div>
+		</div>
+	</form>	
+</template>
+<!-- post submit template ends -->
