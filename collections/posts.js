@@ -7,6 +7,16 @@ We want 'Posts' to be globally accesible throughout the app */
 
 Posts = new Meteor.Collection('posts');
 
+/* Adding permissions */
+Posts.allow({
+	update: function(userId, post) {
+		return ownsDocument(userId, post);
+	},
+	remove: function(userId, post) {
+		return ownsDocument(userId, post);
+	}
+});
+
 /* Meteor server method to add new post after validation checks */
 Meteor.methods({
 	postInsert: function(postAtributes) {
