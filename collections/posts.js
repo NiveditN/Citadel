@@ -7,10 +7,30 @@ We want 'Posts' to be globally accesible throughout the app */
 
 Posts = new Meteor.Collection('posts');
 
-/* Allowing for client side post inserts after removing insecure package */
-Posts.allow({
-	insert: function(userId, doc) {
-		// only allow posting if you are logged in
-		return !! userId;
+/* Meteor server method to add new post after validation checks */
+Meteor.methods({
+	postInsert: function(postAtributes) {
+		// validation check
+		check(Meteor.userId(), String);
+		check(postAtributes, {
+			title: String,
+			url: String,
+			message: String
+		});
+	
+		var user = Meteor.user();
+		// pick out the whitelisted keys
+		var post = _.extend(postAtributes, {
+			userId: user._id,
+			author: user.username,
+			submitted: new Date()
+		}); 
+
+		// adding new post to db
+		var postId = Posts.insert(post);
+
+		return {
+			_id: postId
+		};
 	}
 });
