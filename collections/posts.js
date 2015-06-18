@@ -14,8 +14,7 @@ Meteor.methods({
 		check(Meteor.userId(), String);
 		check(postAtributes, {
 			title: String,
-			url: String,
-			message: String
+			url: String
 		});
 	
 		var user = Meteor.user();
